@@ -8,5 +8,8 @@
 <body>
     <h1>Welcome to Git Pro Course</h1>
     <p>Learning Git like a professional.</p>
+    <footer>
+        <p>&copy; 2026 Git Pro Course</p>
+    </footer>
 </body>
 </html>
