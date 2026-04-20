@@ -1,0 +1,1543 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Git para Profesionales - Curso Completo</title>
+        <link rel="stylesheet" href="styles.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css"
+        />
+    </head>
+    <body>
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <img src="logo.webp" alt="Git Pro Course Logo" class="sidebar-logo" />
+                <h2>Git Pro</h2>
+            </div>
+            <nav class="nav-menu">
+                <a href="#intro" class="nav-item active" data-section="intro">
+                    <span class="nav-number">01</span>
+                    <span class="nav-title">Introducción</span>
+                </a>
+                <a href="#requisitos" class="nav-item" data-section="requisitos">
+                    <span class="nav-number">02</span>
+                    <span class="nav-title">Requisitos Previos</span>
+                </a>
+                <a href="#seccion-2" class="nav-item" data-section="seccion-2">
+                    <span class="nav-number">03</span>
+                    <span class="nav-title">Configurando Git</span>
+                </a>
+                <a href="#seccion-3" class="nav-item" data-section="seccion-3">
+                    <span class="nav-number">04</span>
+                    <span class="nav-title">GitHub y SSH</span>
+                </a>
+                <a href="#seccion-4" class="nav-item" data-section="seccion-4">
+                    <span class="nav-number">05</span>
+                    <span class="nav-title">Proyecto Laravel</span>
+                </a>
+                <a href="#seccion-5" class="nav-item" data-section="seccion-5">
+                    <span class="nav-number">06</span>
+                    <span class="nav-title">Conventional Commits</span>
+                </a>
+                <a href="#seccion-6" class="nav-item" data-section="seccion-6">
+                    <span class="nav-number">07</span>
+                    <span class="nav-title">Aliases de Git</span>
+                </a>
+                <a href="#seccion-7" class="nav-item" data-section="seccion-7">
+                    <span class="nav-number">08</span>
+                    <span class="nav-title">Git Stash</span>
+                </a>
+                <a href="#seccion-8" class="nav-item" data-section="seccion-8">
+                    <span class="nav-number">09</span>
+                    <span class="nav-title">Git Rebase</span>
+                </a>
+                <a href="#seccion-9" class="nav-item" data-section="seccion-9">
+                    <span class="nav-number">10</span>
+                    <span class="nav-title">Rebase Interactivo</span>
+                </a>
+                <a href="#seccion-10" class="nav-item" data-section="seccion-10">
+                    <span class="nav-number">11</span>
+                    <span class="nav-title">Cherry-pick</span>
+                </a>
+                <a href="#seccion-11" class="nav-item" data-section="seccion-11">
+                    <span class="nav-number">12</span>
+                    <span class="nav-title">Git Bisect</span>
+                </a>
+                <a href="#seccion-12" class="nav-item" data-section="seccion-12">
+                    <span class="nav-number">13</span>
+                    <span class="nav-title">Git Reflog</span>
+                </a>
+                <a href="#seccion-13" class="nav-item" data-section="seccion-13">
+                    <span class="nav-number">14</span>
+                    <span class="nav-title">Estrategias Branching</span>
+                </a>
+                <a href="#seccion-14" class="nav-item" data-section="seccion-14">
+                    <span class="nav-number">15</span>
+                    <span class="nav-title">Pull Requests</span>
+                </a>
+                <a href="#seccion-15" class="nav-item" data-section="seccion-15">
+                    <span class="nav-number">16</span>
+                    <span class="nav-title">Buenas Prácticas</span>
+                </a>
+                <a href="#seccion-16" class="nav-item" data-section="seccion-16">
+                    <span class="nav-number">17</span>
+                    <span class="nav-title">Despedida</span>
+                </a>
+            </nav>
+            <div class="sidebar-footer">
+                <div class="progress-container">
+                    <div class="progress-bar" id="progressBar"></div>
+                </div>
+                <p class="progress-text"><span id="currentLesson">0</span> / 17 lecciones</p>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- INTRO: Hero Section -->
+            <section id="intro" class="hero-section active-section">
+                <div class="hero-content">
+                    <img src="logo.webp" alt="Git Professional Course" class="hero-logo" />
+                    <h1 class="hero-title">Git para Profesionales</h1>
+                    <p class="hero-subtitle">Aprende a trabajar con Git y GitHub 100% desde la terminal</p>
+                    <div class="hero-description">
+                        <p>
+                            En este curso vamos a aprender a trabajar con Git y GitHub 100% desde la terminal, que es
+                            como se trabaja en equipos profesionales. Veremos Conventional Commits, rebase, stash,
+                            cherry-pick, bisect, reflog, Pull Requests y el flujo de trabajo completo que se usa en el
+                            día a día real. Todo sobre un proyecto Laravel con Sail.
+                        </p>
+                    </div>
+                    <div class="hero-features">
+                        <div class="feature-item">
+                            <span class="feature-icon">🚀</span>
+                            <span>Conventional Commits</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">🔧</span>
+                            <span>Rebase & Cherry-pick</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">📦</span>
+                            <span>Pull Requests</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">💡</span>
+                            <span>Workflow Profesional</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- LECCION 0: Requisitos -->
+            <section id="requisitos" class="content-section">
+                <div class="section-header">
+                    <img src="logo.webp" alt="Logo" class="section-logo" />
+                    <div>
+                        <span class="section-number">Requisitos Previos</span>
+                        <h2>Requisitos Previos</h2>
+                    </div>
+                </div>
+                <div class="section-body">
+                    <ul class="requirements-list">
+                        <li>Haber completado el curso de Git y GitHub de iniciación</li>
+                        <li>Tener un sistema Unix (Linux, macOS o WSL 2 en Windows)</li>
+                        <li>Docker Desktop instalado y funcionando</li>
+                    </ul>
+                    <div class="note">
+                        <strong>Nota:</strong> Trabajaremos sobre un entorno Unix. En el curso se utiliza Ubuntu 22.04
+                        en WSL 2, pero puedes seguirlo desde Linux nativo o macOS. Usaremos un proyecto Laravel nuevo
+                        con Sail y una cuenta de GitHub nueva creada desde cero.
+                    </div>
+                </div>
+            </section>
+
+            <!-- LECCION 2: Configurando Git -->
+            <section id="seccion-2" class="content-section">
+                <div class="section-header">
+                    <img src="logo.webp" alt="Logo" class="section-logo" />
+                    <div>
+                        <span class="section-number">Lección 02</span>
+                        <h2>Configurando Git en la Terminal</h2>
+                    </div>
+                </div>
+                <div class="section-body">
+                    <p>
+                        Git ya viene instalado en la mayoría de distribuciones Linux. Lo único que necesitamos es
+                        configurarlo con nuestros datos.
+                    </p>
+
+                    <p>
+                        La configuración de Git tiene tres niveles: <code>system</code> (todo el equipo),
+                        <code>global</code> (nuestro usuario) y <code>local</code> (un proyecto concreto). Nosotros
+                        configuraremos a nivel <code>global</code> para que aplique a todos nuestros proyectos.
+                    </p>
+
+                    <h3>Comandos</h3>
+                    <pre><code class="language-bash"># Verificar la versión de Git
+git --version
+# git version 2.34.1
+
+# Configurar nombre y email (los que usaremos en GitHub)
+git config --global user.name "Nombre Apellido"
+git config --global user.email "email@ejemplo.com"
+
+# Configurar el editor por defecto
+git config --global core.editor "nano"
+
+# Configurar la rama por defecto como main
+git config --global init.defaultBranch main
+
+# Verificar toda la configuración
+git config --global --list</code></pre>
+                </div>
+            </section>
+
+            <!-- LECCION 3: GitHub y SSH -->
+            <section id="seccion-3" class="content-section">
+                <div class="section-header">
+                    <img src="logo.webp" alt="Logo" class="section-logo" />
+                    <div>
+                        <span class="section-number">Lección 03</span>
+                        <h2>Creando Cuenta en GitHub y Autenticación SSH</h2>
+                    </div>
+                </div>
+                <div class="section-body">
+                    <p>
+                        Vamos a crear una cuenta nueva en GitHub desde cero. Una vez creada, necesitamos una forma de
+                        autenticarnos desde la terminal para poder subir y bajar código. Hay dos formas principales:
+                        HTTPS con tokens y SSH con claves. Usaremos SSH porque es lo más cómodo en el día a día: se
+                        configura una vez y no hay que estar introduciendo credenciales nunca más.
+                    </p>
+
+                    <p>
+                        SSH funciona con un par de claves: una privada (que se queda en nuestro equipo y nunca se
+                        comparte) y una pública (que le damos a GitHub). Cuando nos conectamos, GitHub verifica que
+                        nuestra clave privada corresponde con la pública que tiene registrada.
+                    </p>
+
+                    <h3>Pasos en GitHub</h3>
+                    <ol>
+                        <li>Ir a github.com y crear una cuenta nueva</li>
+                        <li>Verificar el email</li>
+                    </ol>
+
+                    <h3>Comandos</h3>
+                    <pre><code class="language-bash"># Verificar que no tenemos claves SSH (dará error, es normal en una instalación nueva)
+ls -la ~/.ssh/
+# ls: cannot access '/home/usuario/.ssh/': No such file or directory
+
+# Generar par de claves SSH con nombre descriptivo (pulsar Enter para passphrase vacía)
+# La passphrase es una contraseña adicional que protege la clave privada.
+# Si la dejamos vacía, no nos la pedirá cada vez que hagamos push o pull.
+# En un equipo personal es cómodo y seguro. En equipos compartidos, mejor ponerla.
+ssh-keygen -t ed25519 -C "email@ejemplo.com" -f ~/.ssh/github
+
+# Verificar que se han creado las claves
+ls -la ~/.ssh/
+# github (clave privada) y github.pub (clave pública)
+
+# Copiar la clave pública para pegarla en GitHub
+cat ~/.ssh/github.pub</code></pre>
+
+                    <h3>Pasos en GitHub</h3>
+                    <ol>
+                        <li>Ir a Settings > SSH and GPG keys > New SSH key</li>
+                        <li>Pegar la clave pública copiada</li>
+                        <li>Guardar</li>
+                    </ol>
+
+                    <h3>Configuración SSH</h3>
+                    <pre><code class="language-bash"># Indicar a SSH qué clave usar para GitHub
+# Crear el archivo de configuración SSH
+nano ~/.ssh/config</code></pre>
+
+                    <p>Contenido de <code>~/.ssh/config</code>:</p>
+                    <pre><code class="language-text">Host github.com
+    IdentityFile ~/.ssh/github</code></pre>
+
+                    <h3>Verificación</h3>
+                    <pre><code class="language-bash"># Verificar que la conexión funciona
+ssh -T git@github.com
+
+# Debería responder: Hi usuario! You've successfully authenticated</code></pre>
+                </div>
+            </section>
+
+            <!-- LECCION 4: Proyecto Laravel -->
+            <section id="seccion-4" class="content-section">
+                <div class="section-header">
+                    <img src="logo.webp" alt="Logo" class="section-logo" />
+                    <div>
+                        <span class="section-number">Lección 04</span>
+                        <h2>Crear Proyecto Laravel y Subirlo a GitHub</h2>
+                    </div>
+                </div>
+                <div class="section-body">
+                    <p>
+                        Vamos a crear nuestro proyecto Laravel con Sail, que será el proyecto sobre el que trabajaremos
+                        durante todo el curso. Después crearemos un repositorio en GitHub y lo conectaremos. Esto es
+                        algo que haremos constantemente en nuestro día a día: iniciar un proyecto y vincularlo con un
+                        repositorio remoto.
+                    </p>
+
+                    <div class="note">
+                        <strong>Importante:</strong> Antes de ejecutar los comandos, asegúrate de que Docker Desktop
+                        esté ejecutándose. Laravel Sail depende de Docker para funcionar.
+                    </div>
+
+                    <h3>Pasos en GitHub</h3>
+                    <ol>
+                        <li>Crear un nuevo repositorio vacío (sin README, sin .gitignore, sin licencia)</li>
+                        <li>Nombre: <code>git-pro-course</code></li>
+                        <li>Visibilidad: público</li>
+                    </ol>
+
+                    <h3>Comandos</h3>
+                    <pre><code class="language-bash"># Asegúrate de que Docker Desktop esté corriendo antes de continuar
+
+# Crear proyecto Laravel con Sail
+curl -s "https://laravel.build/git-pro-course" | bash
+
+# Entrar al proyecto
+cd git-pro-course
+
+# Levantar el proyecto con Sail
+sail up -d
+
+# Verificar que funciona
+sail artisan --version
+
+# Inicializar Git
+git init
+
+# Ver el estado
+git status
+
+# Añadir todos los archivos
+git add .
+
+# Primer commit
+git commit -m "chore: initial Laravel project setup"
+
+# Conectar con nuestro repositorio remoto
+git remote add origin git@github.com:USUARIO/git-pro-course.git
+
+# Subir el proyecto
+git push -u origin main</code></pre>
+                </div>
+            </section>
+
+            <!-- LECCION 5: Conventional Commits -->
+            <section id="seccion-5" class="content-section">
+                <div class="section-header">
+                    <img src="logo.webp" alt="Logo" class="section-logo" />
+                    <div>
+                        <span class="section-number">Lección 05</span>
+                        <h2>Conventional Commits - Mensajes Profesionales</h2>
+                    </div>
+                </div>
+                <div class="section-body">
+                    <p>
+                        En el curso de iniciación aprendimos a hacer commits, pero los mensajes eran libres. En equipos
+                        profesionales se usa una convención llamada Conventional Commits que estandariza los mensajes.
+                        Esto facilita entender el historial, generar changelogs automáticos y trabajar con herramientas
+                        de versionado.
+                    </p>
+
+                    <p>La estructura es: <code>tipo(ámbito opcional): descripción</code></p>
+
+                    <h3>Tipos principales</h3>
+                    <ul>
+                        <li><code>feat</code>: nueva funcionalidad</li>
+                        <li><code>fix</code>: corrección de un bug</li>
+                        <li><code>docs</code>: cambios en documentación</li>
+                        <li><code>style</code>: cambios de formato (espacios, comas, etc., no CSS)</li>
+                        <li><code>refactor</code>: cambio de código que no añade funcionalidad ni corrige bugs</li>
+                        <li><code>chore</code>: tareas de mantenimiento (dependencias, configuración)</li>
+                        <li><code>test</code>: añadir o modificar tests</li>
+                    </ul>
+
+                    <h3>Ejemplos reales</h3>
+                    <ul>
+                        <li><code>feat: add welcome message to home page</code></li>
+                        <li><code>fix: correct typo in about page title</code></li>
+                        <li><code>docs: update README with installation steps</code></li>
+                        <li><code>chore: update laravel framework to v11</code></li>
+                    </ul>
+
+                    <h3>Comandos</h3>
+                    <pre><code class="language-bash"># Crear una vista para nuestra home
+sail artisan make:view home</code></pre>
+
+                    <h3>Código</h3>
+                    <p>Editar <code>resources/views/home.blade.php</code>:</p>
+                    <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Git Pro Course&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Welcome to Git Pro Course&lt;/h1&gt;
+    &lt;p&gt;Learning Git like a professional.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+                    <p>Editar <code>routes/web.php</code>:</p>
+                    <pre><code class="language-php">&lt;?php
+
+use Illuminate\Support\Facades\Route;
+
+Route::get('/', function () {
+    return view('home');
+});</code></pre>
+
+                    <h3>Comandos</h3>
+                    <pre><code class="language-bash"># Ver los cambios
+git status
+git diff
+
+# Commit con Conventional Commits (aún no tenemos aliases, los crearemos en la siguiente lección)
+git add resources/views/home.blade.php
+git add routes/web.php
+git commit -m "feat: add home page with welcome message"</code></pre>
+
+                    <h3>Código</h3>
+                    <p>Editar <code>README.md</code>:</p>
+                    <pre><code class="language-markdown"># Git Pro Course
+
+Proyecto Laravel utilizado para aprender Git y GitHub de forma profesional.
+
+## Requisitos
+
+- Docker Desktop
+- WSL 2
+
+## Instalación
+
+git clone git@github.com:USUARIO/git-pro-course.git
+cd git-pro-course
+sail up -d</code></pre>
+
+                    <h3>Comandos</h3>
+                    <pre><code class="language-bash">git add README.md
+git commit -m "docs: add project description and installation steps"
+
+# Subir los cambios
+git push
+
+# Verificar el historial limpio
+git log --oneline</code></pre>
+                </div>
+            </section>
+
+            <!-- LECCION 6: Aliases -->
+            <section id="seccion-6" class="content-section">
+                <div class="section-header">
+                    <img src="logo.webp" alt="Logo" class="section-logo" />
+                    <div>
+                        <span class="section-number">Lección 06</span>
+                        <h2>Aliases de Git - Trabaja Más Rápido</h2>
+                    </div>
+                </div>
+                <div class="section-body">
+                    <p>
+                        Hay comandos de Git que escribimos decenas de veces al día. Los aliases nos permiten crear
+                        atajos personalizados para no repetir lo mismo constantemente. Es una configuración personal,
+                        cada desarrollador tiene los suyos, y se guardan en la configuración global de Git.
+                    </p>
+
+                    <h3>Comandos</h3>
+                    <pre><code class="language-bash"># Aliases esenciales
+git config --global alias.st status
+git config --global alias.co checkout
+git config --global alias.br branch
+git config --global alias.ci commit
+
+# Commit con mensaje directo (sin abrir editor)
+git config --global alias.cm "commit -m"
+
+# Log visual con gráfico de ramas, una línea por commit
+git config --global alias.lg "log --oneline --graph --all --decorate"
+
+# Ver solo el último commit
+git config --global alias.last "log -1 --oneline"
+
+# Sacar archivos del staging area (deshacer git add)
+git config --global alias.unstage "restore --staged"
+
+# Ver diferencias de archivos que están en staging
+git config --global alias.ds "diff --staged"
+
+# Probar los aliases
+git st
+git lg
+git last
+
+# Ver todos los aliases configurados
+git config --global --get-regexp alias</code></pre>
+
+                    <h3>Código</h3>
+                    <p>Editar <code>resources/views/home.blade.php</code>, añadir un footer:</p>
+                    <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Git Pro Course&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Welcome to Git Pro Course&lt;/h1&gt;
+    &lt;p&gt;Learning Git like a professional.&lt;/p&gt;
+    &lt;footer&gt;
+        &lt;p&gt;&amp;copy; 2026 Git Pro Course&lt;/p&gt;
+    &lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+                    <h3>Comandos</h3>
+                    <pre><code class="language-bash"># Usar aliases para el flujo completo
+git st
+git add .
+
+# Ver los cambios que van a ir en el commit (ya staged)
+git ds
+
+git cm "feat: add footer to home page"
+git lg
+git push</code></pre>
+                </div>
+            </section>
+
+            <!-- LECCION 7: Git Stash -->
+            <section id="seccion-7" class="content-section">
+                <div class="section-header">
+                    <img src="logo.webp" alt="Logo" class="section-logo" />
+                    <div>
+                        <span class="section-number">Lección 07</span>
+                        <h2>Git Stash - Guardando Trabajo Temporal</h2>
+                    </div>
+                </div>
+                <div class="section-body">
+                    <p>
+                        Estamos trabajando en algo y de repente nos piden que revisemos otra cosa urgente en otra rama.
+                        Pero no queremos hacer commit de un trabajo a medias. Aquí es donde entra
+                        <code>git stash</code>: guarda nuestros cambios temporalmente en una pila, dejando el directorio
+                        de trabajo limpio para poder cambiar de rama. Cuando volvamos, recuperamos los cambios y
+                        seguimos donde lo dejamos.
+                    </p>
+
+                    <p>
+                        Podemos tener múltiples stashes apilados, ponerles nombre para identificarlos, y aplicarlos
+                        selectivamente.
+                    </p>
+
+                    <h3>Código: trabajo en progreso</h3>
+                    <p>Editar <code>resources/views/home.blade.php</code>:</p>
+                    <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Git Pro Course&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;nav&gt;
+        &lt;a href="/"&gt;Home&lt;/a&gt;
+        &lt;a href="/about"&gt;About&lt;/a&gt;
+    &lt;/nav&gt;
+    &lt;h1&gt;Welcome to Git Pro Course&lt;/h1&gt;
+    &lt;p&gt;Learning Git like a professional.&lt;/p&gt;
+    &lt;footer&gt;
+        &lt;p&gt;&amp;copy; 2026 Git Pro Course&lt;/p&gt;
+    &lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+                    <h3>Comandos</h3>
+                    <pre><code class="language-bash"># Tenemos cambios sin terminar
+git st
+
+# Guardar en stash con un mensaje descriptivo
+git stash push -m "wip: navigation menu"
+
+# El directorio está limpio
+git st
+
+# Ver la lista de stashes
+git stash list
+
+# Vamos a atender una tarea urgente en otra rama
+git co -b fix/add-about-page</code></pre>
+
+                    <h3>Código: tarea urgente</h3>
+                    <p>Crear <code>resources/views/about.blade.php</code>:</p>
+                    <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;About - Git Pro Course&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;About&lt;/h1&gt;
+    &lt;p&gt;This project is built with Laravel and Sail.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+                    <p>Añadir ruta en <code>routes/web.php</code>:</p>
+                    <pre><code class="language-php">&lt;?php
+
+use Illuminate\Support\Facades\Route;
+
+Route::get('/', function () {
+    return view('home');
+});
+
+Route::get('/about', function () {
+    return view('about');
+});</code></pre>
+
+                    <h3>Comandos</h3>
+                    <pre><code class="language-bash"># Commit de la tarea urgente
+git add .
+git cm "feat: add about page"
+
+# Integrar la tarea urgente en main
+git co main
+git merge fix/add-about-page
+git push
+git br -d fix/add-about-page
+
+# Ahora recuperamos nuestro trabajo del stash
+git stash list
+git stash pop
+
+# Verificar que nuestros cambios del nav están de vuelta
+git st
+git diff
+
+# Terminar el trabajo y hacer commit
+git add .
+git cm "feat: add navigation menu to home page"
+git push
+
+# Ver todos los stashes con su índice
+# git stash list
+# stash@{0} es siempre el más reciente, {1} el siguiente, etc.
+
+# Aplicar un stash concreto sin eliminarlo de la lista
+# git stash apply stash@{1}
+
+# Eliminar un stash concreto sin aplicarlo
+# git stash drop stash@{1}
+
+# Limpiar todos los stashes
+# git stash clear</code></pre>
+                </div>
+            </section>
+
+            <!-- LECCION 8: Git Rebase -->
+            <section id="seccion-8" class="content-section">
+                <div class="section-header">
+                    <img src="logo.webp" alt="Logo" class="section-logo" />
+                    <div>
+                        <span class="section-number">Lección 08</span>
+                        <h2>Git Rebase - Reescribiendo la Historia</h2>
+                    </div>
+                </div>
+                <div class="section-body">
+                    <p>
+                        Merge crea un commit adicional de fusión, lo cual ensucia el historial. Rebase es la
+                        alternativa: toma los commits de nuestra rama y los "reaplica" encima de la rama destino,
+                        creando un historial lineal y limpio.
+                    </p>
+
+                    <p>El flujo con rebase es:</p>
+                    <ol>
+                        <li>Volvemos a main y hacemos pull para tener lo último</li>
+                        <li>Volvemos a nuestra rama</li>
+                        <li>Hacemos rebase de main, que pone nuestros commits encima</li>
+                        <li>Historial limpio, como si hubiéramos empezado a trabajar desde el último commit de main</li>
+                    </ol>
+
+                    <h3>Visualmente</h3>
+                    <pre><code class="language-text">Merge:
+main:    A---B---C---M
+              \     /
+feature:       D---E
+
+Rebase:
+main:    A---B---C
+                  \
+feature:           D'---E'</code></pre>
+
+                    <h3>Comandos</h3>
+                    <pre><code class="language-bash"># Crear una rama de trabajo
+git co -b feature/contact-page</code></pre>
+
+                    <h3>Código: página de contacto</h3>
+                    <p>Crear <code>resources/views/contact.blade.php</code>:</p>
+                    <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Contact - Git Pro Course&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Contact&lt;/h1&gt;
+    &lt;p&gt;Email us at hello@gitpro.test&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+                    <p>Añadir ruta en <code>routes/web.php</code>:</p>
+                    <pre><code class="language-php">Route::get('/contact', function () {
+    return view('contact');
+});</code></pre>
+
+                    <h3>Comandos</h3>
+                    <pre><code class="language-bash">git add .
+git cm "feat: add contact page"
+
+# Simulamos que main ha avanzado.
+# En la vida real, esto vendría de un git pull tras los cambios de un compañero.
+# Aquí lo hacemos directamente en main para simular esa situación.
+git co main</code></pre>
+
+                    <h3>Código: cambio en main mientras trabajábamos</h3>
+                    <p>Editar <code>resources/views/about.blade.php</code>, añadir versión:</p>
+                    <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;About - Git Pro Course&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;About&lt;/h1&gt;
+    &lt;p&gt;This project is built with Laravel and Sail.&lt;/p&gt;
+    &lt;p&gt;Version 1.0&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+                    <h3>Comandos</h3>
+                    <pre><code class="language-bash">git add .
+git cm "docs: add version info to about page"
+
+# Ver el historial actual (las ramas han divergido)
+git lg
+
+# Flujo completo de rebase:
+# 1. Actualizar main con lo último del remoto
+git co main
+git pull
+
+# 2. Volver a nuestra rama
+git co feature/contact-page
+
+# 3. Rebase: poner nuestros commits encima de main actualizado
+git rebase main
+
+# Ver el historial limpio y lineal
+git lg
+
+# Integrar en main
+git co main
+git merge feature/contact-page
+
+# El historial queda completamente lineal (fast-forward)
+git lg
+
+# Subir y limpiar
+git push
+git br -d feature/contact-page</code></pre>
+
+                    <div
+                        class="note"
+                        style="
+                            border-left: 4px solid #f39c12;
+                            background-color: #fef5e7;
+                            padding: 1rem;
+                            margin-top: 2rem;
+                        "
+                    >
+                        <h3 style="margin-top: 0; color: #333">⚠️ ¿Qué pasa si hay conflictos durante el rebase?</h3>
+                        <p>
+                            Cuando Git no puede aplicar tus commits automáticamente (porque hay cambios en las mismas
+                            líneas), el rebase se pausa y te pide resolver el conflicto manualmente.
+                        </p>
+
+                        <h4 style="color: #333">Ejemplo de conflicto</h4>
+                        <pre><code class="language-bash"># Durante el rebase aparece:
+# CONFLICT (content): Merge conflict in routes/web.php
+
+# Ver qué archivos tienen conflictos
+git status
+
+# Abrir el archivo y verás marcadores:
+# &lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD (cambios de main)
+# código de main
+# =======
+# código de tu rama
+# &gt;&gt;&gt;&gt;&gt;&gt;&gt; tu-commit
+
+# Editar el archivo, decidir qué código conservar, eliminar los marcadores
+
+# Una vez resuelto
+git add routes/web.php
+git rebase --continue
+# ⚠️ NO hagas git commit (error común)
+# git rebase --continue se encarga de eso automáticamente
+
+# Si te pierdes y quieres cancelar todo
+git rebase --abort</code></pre>
+
+                        <p>
+                            <strong>Diferencia con merge:</strong> en merge resuelves el conflicto una sola vez y haces
+                            <code>git commit</code>. En rebase NO haces commit, solo <code>git add</code> y
+                            <code>git rebase --continue</code>.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- LECCION 9: Rebase Interactivo -->
+            <section id="seccion-9" class="content-section">
+                <div class="section-header">
+                    <img src="logo.webp" alt="Logo" class="section-logo" />
+                    <div>
+                        <span class="section-number">Lección 09</span>
+                        <h2>Rebase Interactivo - Squash, Fixup y Reorder</h2>
+                    </div>
+                </div>
+                <div class="section-body">
+                    <p>
+                        El rebase interactivo es una de las herramientas más potentes de Git. Nos permite reescribir el
+                        historial de commits antes de integrar nuestro trabajo: podemos unir varios commits en uno
+                        (squash), eliminar commits, reordenarlos o editar sus mensajes.
+                    </p>
+
+                    <p>
+                        Esto es muy útil cuando estamos trabajando en una feature y vamos haciendo commits pequeños tipo
+                        "wip", "fix typo", "ahora sí funciona"... Antes de hacer merge a main, limpiamos todo eso y
+                        dejamos commits limpios y profesionales.
+                    </p>
+
+                    <h3>Los comandos del rebase interactivo</h3>
+                    <ul>
+                        <li><code>pick</code>: mantener el commit tal cual</li>
+                        <li><code>reword</code>: cambiar el mensaje del commit</li>
+                        <li><code>squash</code>: unir con el commit anterior (mantiene ambos mensajes)</li>
+                        <li><code>fixup</code>: unir con el commit anterior (descarta este mensaje)</li>
+                        <li><code>drop</code>: eliminar el commit</li>
+                    </ul>
+
+                    <h3>Comandos</h3>
+                    <pre><code class="language-bash"># Crear una nueva rama
+git co -b feature/services-page</code></pre>
+
+                    <h3>Código: estructura inicial</h3>
+                    <p>Crear <code>resources/views/services.blade.php</code>:</p>
+                    <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Services - Git Pro Course&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Services&lt;/h1&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+                    <h3>Comandos</h3>
+                    <pre><code class="language-bash">git add .
+git cm "feat: add services page"</code></pre>
+
+                    <h3>Código: añadir listado</h3>
+                    <p>Editar <code>resources/views/services.blade.php</code>:</p>
+                    <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Services - Git Pro Course&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Services&lt;/h1&gt;
+    &lt;ul&gt;
+        &lt;li&gt;Web Development&lt;/li&gt;
+        &lt;li&gt;API Design&lt;/li&gt;
+        &lt;li&gt;Consulting&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+                    <h3>Comandos</h3>
+                    <pre><code class="language-bash">git add .
+git cm "feat: add services list"</code></pre>
+
+                    <h3>Código: añadir ruta</h3>
+                    <p>Añadir en <code>routes/web.php</code>:</p>
+                    <pre><code class="language-php">Route::get('/services', function () {
+    return view('services');
+});</code></pre>
+
+                    <h3>Comandos</h3>
+                    <pre><code class="language-bash">git add .
+git cm "feat: add services route"</code></pre>
+
+                    <h3>Código: corregir título</h3>
+                    <p>Editar <code>resources/views/services.blade.php</code>, cambiar el título:</p>
+                    <pre><code class="language-html">    &lt;h1&gt;Our Services&lt;/h1&gt;</code></pre>
+
+                    <h3>Comandos</h3>
+                    <pre><code class="language-bash">git add .
+git cm "fix: update services page title"
+
+# Ver los 4 commits que tenemos
+git lg
+
+# Limpiar: queremos dejar un solo commit limpio
+# Rebase interactivo de los últimos 4 commits
+git rebase -i HEAD~4</code></pre>
+
+                    <h3>En el editor que se abre</h3>
+                    <pre><code class="language-text">reword abc1234 feat: add services page
+fixup abc1235 feat: add services list
+fixup abc1236 feat: add services route
+fixup abc1237 fix: update services page title</code></pre>
+
+                    <p>
+                        Cambiar <code>pick</code> por <code>reword</code> en el primero y por <code>fixup</code> en los
+                        tres últimos. Guardar y cerrar. Se abrirá otro editor para cambiar el mensaje del primer commit
+                        a: <code>feat: add services page with route and listing</code>.
+                    </p>
+
+                    <h3>Comandos</h3>
+                    <pre><code class="language-bash"># Ver el resultado: un solo commit limpio
+git lg
+
+# Flujo completo: actualizar main, rebase, integrar
+git co main
+git pull
+git co feature/services-page
+git rebase main
+git co main
+git merge feature/services-page
+git push
+git br -d feature/services-page</code></pre>
+                </div>
+            </section>
+
+            <!-- LECCION 10: Cherry-pick -->
+            <section id="seccion-10" class="content-section">
+                <div class="section-header">
+                    <img src="logo.webp" alt="Logo" class="section-logo" />
+                    <div>
+                        <span class="section-number">Lección 10</span>
+                        <h2>Cherry-pick - Eligiendo Commits Específicos</h2>
+                    </div>
+                </div>
+                <div class="section-body">
+                    <p>
+                        Cherry-pick nos permite coger un commit concreto de cualquier rama y aplicarlo en nuestra rama
+                        actual. Es como decir "quiero solo este cambio, no toda la rama".
+                    </p>
+
+                    <p>
+                        Casos de uso reales: un compañero ha hecho un fix en su rama que necesitamos ya en main sin
+                        esperar a que termine toda su feature. O hemos hecho un commit en la rama equivocada y queremos
+                        moverlo.
+                    </p>
+
+                    <h3>Comandos</h3>
+                    <pre><code class="language-bash"># Crear una rama simulando el trabajo de un compañero
+git co -b feature/improvements</code></pre>
+
+                    <h3>Código: commit que NO queremos traer</h3>
+                    <p>Editar <code>resources/views/home.blade.php</code>, añadir un subtítulo debajo del h1:</p>
+                    <pre><code class="language-html">    &lt;h1&gt;Welcome to Git Pro Course&lt;/h1&gt;
+    &lt;h2&gt;Work in progress&lt;/h2&gt;</code></pre>
+
+                    <h3>Comandos</h3>
+                    <pre><code class="language-bash">git add .
+git cm "feat: add subtitle to home page"</code></pre>
+
+                    <h3>Código: commit que SÍ queremos traer</h3>
+                    <p>Editar <code>resources/views/about.blade.php</code>, añadir licencia:</p>
+                    <pre><code class="language-html">    &lt;p&gt;Version 1.0&lt;/p&gt;
+    &lt;p&gt;Licensed under MIT.&lt;/p&gt;</code></pre>
+
+                    <h3>Comandos</h3>
+                    <pre><code class="language-bash">git add .
+git cm "docs: add license info to about page"
+
+# Ver los commits y copiar el hash del que queremos
+git lg
+
+# Volver a main y traer solo el commit que nos interesa
+git co main
+git cherry-pick &lt;HASH_DEL_COMMIT_DE_LICENSE&gt;
+
+# Verificar que solo tenemos ese cambio
+git lg
+git push
+
+# Limpiar la rama (usamos -D en vez de -d porque tiene commits sin mergear)
+git br -D feature/improvements</code></pre>
+                </div>
+            </section>
+
+            <!-- LECCION 11: Git Bisect -->
+            <section id="seccion-11" class="content-section">
+                <div class="section-header">
+                    <img src="logo.webp" alt="Logo" class="section-logo" />
+                    <div>
+                        <span class="section-number">Lección 11</span>
+                        <h2>Git Bisect - Encontrando el Commit que Rompió Todo</h2>
+                    </div>
+                </div>
+                <div class="section-body">
+                    <p>
+                        Imaginemos que algo ha dejado de funcionar y no sabemos cuándo se rompió. Tenemos 50 commits por
+                        delante. ¿Revisamos uno por uno? No. Git bisect hace una búsqueda binaria automática: le decimos
+                        cuál es un commit bueno (donde todo funcionaba) y cuál es malo (donde está roto), y Git va
+                        partiendo por la mitad hasta encontrar el commit exacto que introdujo el problema.
+                    </p>
+
+                    <p>Es una herramienta de depuración increíblemente útil que poca gente conoce.</p>
+
+                    <h3>Preparación: creamos varios commits para simular un historial real</h3>
+
+                    <h4>Commit 1: actualizar navegación</h4>
+                    <p>Editar <code>resources/views/home.blade.php</code>, actualizar nav:</p>
+                    <pre><code class="language-html">    &lt;nav&gt;
+        &lt;a href="/"&gt;Home&lt;/a&gt;
+        &lt;a href="/about"&gt;About&lt;/a&gt;
+        &lt;a href="/services"&gt;Services&lt;/a&gt;
+        &lt;a href="/contact"&gt;Contact&lt;/a&gt;
+    &lt;/nav&gt;</code></pre>
+
+                    <pre><code class="language-bash">git add .
+git cm "feat: update navigation with all links"</code></pre>
+
+                    <h4>Commit 2: el que introduce el error</h4>
+                    <p>Editar <code>routes/web.php</code>, comentar la ruta de contact (simulando un error):</p>
+                    <pre><code class="language-php">// Route::get('/contact', function () {
+//     return view('contact');
+// });</code></pre>
+
+                    <pre><code class="language-bash">git add .
+git cm "refactor: reorganize routes file"</code></pre>
+
+                    <h4>Commit 3: cambio en services</h4>
+                    <p>
+                        Editar <code>resources/views/services.blade.php</code>, añadir párrafo antes del cierre de body:
+                    </p>
+                    <pre><code class="language-html">    &lt;p&gt;Contact us for custom solutions.&lt;/p&gt;
+&lt;/body&gt;</code></pre>
+
+                    <pre><code class="language-bash">git add .
+git cm "feat: add call to action in services page"</code></pre>
+
+                    <h4>Commit 4: cambio en about</h4>
+                    <p>Editar <code>resources/views/about.blade.php</code>, añadir línea antes del cierre de body:</p>
+                    <pre><code class="language-html">    &lt;p&gt;Built with love and Laravel.&lt;/p&gt;
+&lt;/body&gt;</code></pre>
+
+                    <pre><code class="language-bash">git add .
+git cm "docs: add tagline to about page"
+git push</code></pre>
+
+                    <h3>Usando bisect para encontrar el problema</h3>
+                    <pre><code class="language-bash"># Ahora "descubrimos" que /contact no funciona
+
+# Iniciar bisect
+git bisect start
+
+# Marcar el commit actual como malo
+git bisect bad
+
+# Marcar un commit anterior donde sabemos que funcionaba
+git bisect good HEAD~4
+
+# Git nos posiciona en un commit intermedio
+# Comprobamos si la ruta /contact está registrada
+sail artisan route:list --path=contact
+
+# Si no aparece la ruta -> git bisect bad
+# Si aparece -> git bisect good
+# Repetir hasta que Git nos diga cuál fue el primer commit malo
+
+# Terminar bisect y volver al estado normal
+git bisect reset</code></pre>
+                </div>
+            </section>
+
+            <!-- LECCION 12: Git Reflog -->
+            <section id="seccion-12" class="content-section">
+                <div class="section-header">
+                    <img src="logo.webp" alt="Logo" class="section-logo" />
+                    <div>
+                        <span class="section-number">Lección 12</span>
+                        <h2>Git Reflog - Recuperando lo Perdido</h2>
+                    </div>
+                </div>
+                <div class="section-body">
+                    <p>
+                        Reflog es el registro de todo lo que ha pasado con HEAD en nuestro repositorio. Cada vez que
+                        hacemos checkout, commit, rebase, reset... queda registrado. Es nuestra red de seguridad: si
+                        hacemos un reset --hard, un rebase que sale mal, o borramos una rama sin querer, reflog nos
+                        permite volver atrás.
+                    </p>
+
+                    <p>Git guarda este registro durante 90 días por defecto. Es local, no se comparte con el remoto.</p>
+
+                    <h3>Comandos</h3>
+                    <pre><code class="language-bash"># Ver el reflog actual
+git reflog
+
+# Vamos a simular un "desastre": borrar los últimos 2 commits
+git lg
+git reset --hard HEAD~2
+
+# Hemos perdido commits
+git lg
+
+# Pero reflog lo tiene todo
+git reflog
+
+# Recuperar volviendo al commit que queremos
+git reset --hard &lt;HASH_DEL_REFLOG&gt;
+
+# Verificar que hemos recuperado todo
+git lg
+
+# Otro caso: recuperar una rama borrada
+git co -b feature/temp
+git co main
+git br -D feature/temp
+
+# La rama ya no existe
+git br
+
+# Pero podemos ver en reflog cuándo estuvimos en ella
+git reflog
+
+# Recrear la rama desde el reflog
+git co -b feature/temp &lt;HASH_DEL_REFLOG&gt;
+git co main
+git br -D feature/temp</code></pre>
+                </div>
+            </section>
+
+            <!-- LECCION 13: Estrategias de Branching -->
+            <section id="seccion-13" class="content-section">
+                <div class="section-header">
+                    <img src="logo.webp" alt="Logo" class="section-logo" />
+                    <div>
+                        <span class="section-number">Lección 13</span>
+                        <h2>Estrategias de Branching y Convenciones</h2>
+                    </div>
+                </div>
+                <div class="section-body">
+                    <p>No hay una única forma correcta de trabajar con ramas, pero hay dos estrategias dominantes:</p>
+
+                    <h3>Git Flow</h3>
+                    <p>
+                        Ramas de larga vida (main, develop, feature/, release/, hotfix/). Cada tipo tiene su propósito.
+                        Es más estructurado, ideal para proyectos con ciclos de release definidos.
+                    </p>
+
+                    <pre><code class="language-text">main ─────────────────────────── (producción)
+  │
+  └── develop ────────────────── (desarrollo)
+       │         │
+       └── feature/login    └── feature/cart</code></pre>
+
+                    <h3>Trunk Based Development</h3>
+                    <p>
+                        Una sola rama principal (main/trunk). Las features se hacen en ramas muy cortas (1-2 días
+                        máximo) y se integran rápidamente. Es más ágil, ideal para equipos con CI/CD.
+                    </p>
+
+                    <pre><code class="language-text">main ──●──●──●──●──●──●──●──── (todo va aquí)
+        \  /    \  /
+         \/      \/
+       (ramas cortas)</code></pre>
+
+                    <p>
+                        En este curso usamos <strong>Trunk Based Development</strong>: trabajamos directamente con main
+                        y ramas feature cortas. Es el flujo más habitual en equipos pequeños y medianos, y el más
+                        sencillo de mantener. Creamos una rama, trabajamos, hacemos rebase con main para actualizar, e
+                        integramos.
+                    </p>
+
+                    <p>Independientemente de la estrategia, las ramas deben seguir convenciones de nombre claras:</p>
+                    <ul>
+                        <li><code>feature/nombre</code> — nueva funcionalidad</li>
+                        <li><code>fix/nombre</code> — corrección de un bug</li>
+                        <li><code>chore/nombre</code> — tareas de mantenimiento</li>
+                    </ul>
+
+                    <p>
+                        El nombre debe ser corto y descriptivo: <code>feature/faq-page</code>,
+                        <code>fix/broken-contact-route</code>, <code>chore/update-dependencies</code>. Así cualquiera
+                        sabe de un vistazo qué hace esa rama.
+                    </p>
+
+                    <h3>Demostración práctica del flujo completo</h3>
+                    <pre><code class="language-bash"># Crear rama con convención de nombre
+git co -b feature/faq-page</code></pre>
+
+                    <h3>Código</h3>
+                    <p>Crear <code>resources/views/faq.blade.php</code>:</p>
+                    <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;FAQ - Git Pro Course&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Frequently Asked Questions&lt;/h1&gt;
+    &lt;h3&gt;What is Git?&lt;/h3&gt;
+    &lt;p&gt;Git is a distributed version control system.&lt;/p&gt;
+    &lt;h3&gt;What is GitHub?&lt;/h3&gt;
+    &lt;p&gt;GitHub is a platform for hosting Git repositories.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+                    <p>Añadir en <code>routes/web.php</code>:</p>
+                    <pre><code class="language-php">Route::get('/faq', function () {
+    return view('faq');
+});</code></pre>
+
+                    <h3>Comandos</h3>
+                    <pre><code class="language-bash">git add .
+git cm "feat: add FAQ page with common questions"
+
+# Flujo completo
+git co main
+git pull
+git co feature/faq-page
+git rebase main
+git co main
+git merge feature/faq-page
+git push
+git br -d feature/faq-page
+git lg</code></pre>
+                </div>
+            </section>
+
+            <!-- LECCION 14: Pull Requests -->
+            <section id="seccion-14" class="content-section">
+                <div class="section-header">
+                    <img src="logo.webp" alt="Logo" class="section-logo" />
+                    <div>
+                        <span class="section-number">Lección 14</span>
+                        <h2>Pull Requests - Revisión de Código Profesional</h2>
+                    </div>
+                </div>
+                <div class="section-body">
+                    <p>
+                        En el curso estamos integrando directamente en local con merge porque es lo más directo. Pero en
+                        equipos donde hay revisión de código, en lugar de hacer merge en local, subimos nuestra rama a
+                        GitHub y creamos un Pull Request (PR). El PR permite que otros revisen nuestro código antes de
+                        integrarlo en main. GitHub se encarga del merge.
+                    </p>
+
+                    <p>
+                        El flujo cambia solo en el último paso: en vez de merge en local, subimos la rama y creamos PR.
+                        Todo lo anterior (crear rama, trabajar, rebase) es exactamente igual.
+                    </p>
+
+                    <p>
+                        Un buen PR tiene un título descriptivo (con Conventional Commits), una descripción que explique
+                        qué se ha hecho y por qué, y cambios atómicos (una feature o fix por PR).
+                    </p>
+
+                    <h3>Buenas prácticas</h3>
+                    <ul>
+                        <li>PRs pequeños y enfocados (fáciles de revisar)</li>
+                        <li>Título con Conventional Commits: <code>feat: add user authentication</code></li>
+                        <li>Descripción clara de qué y por qué</li>
+                        <li>Solicitar revisión a compañeros</li>
+                        <li>No mergear tu propio PR si hay revisores disponibles</li>
+                        <li>Responder a los comentarios antes de mergear</li>
+                    </ul>
+
+                    <p>
+                        Sobre el botón de merge en GitHub: veremos tres opciones. "Create a merge commit" añade un
+                        commit de fusión. "Squash and merge" aplasta todos los commits de la rama en uno solo, útil si
+                        no hemos limpiado los commits antes. "Rebase and merge" reaplica los commits encima de main. Si
+                        ya hemos hecho squash con rebase interactivo en local (como vimos en la lección 9), cualquier
+                        opción funciona igual porque solo tenemos un commit limpio. Si no hemos limpiado, "Squash and
+                        merge" es la opción más cómoda.
+                    </p>
+
+                    <h3>Comandos</h3>
+                    <pre><code class="language-bash">git co -b feature/improve-navigation</code></pre>
+
+                    <h3>Código</h3>
+                    <p>Editar <code>resources/views/home.blade.php</code>, actualizar nav con todos los links:</p>
+                    <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Git Pro Course&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;nav&gt;
+        &lt;a href="/"&gt;Home&lt;/a&gt;
+        &lt;a href="/about"&gt;About&lt;/a&gt;
+        &lt;a href="/services"&gt;Services&lt;/a&gt;
+        &lt;a href="/faq"&gt;FAQ&lt;/a&gt;
+        &lt;a href="/contact"&gt;Contact&lt;/a&gt;
+    &lt;/nav&gt;
+    &lt;h1&gt;Welcome to Git Pro Course&lt;/h1&gt;
+    &lt;p&gt;Learning Git like a professional.&lt;/p&gt;
+    &lt;footer&gt;
+        &lt;p&gt;&amp;copy; 2026 Git Pro Course&lt;/p&gt;
+    &lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+                    <h3>Comandos</h3>
+                    <pre><code class="language-bash">git add .
+git cm "feat: improve navigation with all page links"
+
+# Mismo flujo de siempre hasta el rebase
+git co main
+git pull
+git co feature/improve-navigation
+git rebase main
+
+# En vez de merge local, subimos la rama a GitHub para crear el PR
+git push -u origin feature/improve-navigation</code></pre>
+
+                    <h3>Pasos en GitHub</h3>
+                    <ol>
+                        <li>Ir al repositorio > Pull Requests > New Pull Request</li>
+                        <li>Seleccionar <code>feature/improve-navigation</code> → <code>main</code></li>
+                        <li>Título: <code>feat: improve navigation with all page links</code></li>
+                        <li>Descripción:</li>
+                    </ol>
+                    <pre><code class="language-markdown">## What
+Updated the navigation menu on the home page to include links to all available pages.
+
+## Why
+Users couldn't navigate to FAQ and Services from the home page.</code></pre>
+                    <ol start="5">
+                        <li>Revisar la pestaña "Files changed" (revisión de código)</li>
+                        <li>Añadir comentarios en líneas específicas si es necesario</li>
+                        <li>Aprobar y mergear (recomendado: Squash and Merge)</li>
+                    </ol>
+
+                    <h3>Después del merge en GitHub</h3>
+                    <pre><code class="language-bash">git co main
+git pull
+git br -d feature/improve-navigation
+git push origin --delete feature/improve-navigation</code></pre>
+                </div>
+            </section>
+
+            <!-- LECCION 15: Buenas Prácticas -->
+            <section id="seccion-15" class="content-section">
+                <div class="section-header">
+                    <img src="logo.webp" alt="Logo" class="section-logo" />
+                    <div>
+                        <span class="section-number">Lección 15</span>
+                        <h2>Buenas Prácticas y Flujo de Trabajo Profesional</h2>
+                    </div>
+                </div>
+                <div class="section-body">
+                    <p>Resumen de todo lo aprendido aplicado al flujo que hemos usado durante todo el curso:</p>
+
+                    <h3>Flujo de trabajo completo</h3>
+                    <pre><code class="language-bash"># 1. Actualizar main
+git co main
+git pull
+
+# 2. Crear rama
+git co -b feature/nueva-funcionalidad
+
+# 3. Trabajar con commits atómicos
+git st
+git diff
+git add .
+git ds
+git cm "feat: description"
+
+# 4. Limpiar commits si hace falta
+git rebase -i HEAD~2
+
+# 5. Actualizar main y rebase
+git co main
+git pull
+git co feature/nueva-funcionalidad
+git rebase main
+
+# 6. Integrar en main
+git co main
+git merge feature/nueva-funcionalidad
+git push
+
+# 7. Limpiar
+git br -d feature/nueva-funcionalidad</code></pre>
+
+                    <p>
+                        Si trabajamos en un equipo con revisión de código, el paso 6 cambia: en vez de merge en local,
+                        subimos la rama con <code>git push -u origin feature/nueva-funcionalidad</code> y creamos un PR
+                        en GitHub, como vimos en la lección 14.
+                    </p>
+
+                    <h3>Tabla resumen de comandos del curso</h3>
+                    <div class="table-responsive">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Comando</th>
+                                    <th>Uso</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>git stash push -m "msg"</code></td>
+                                    <td>Guardar trabajo temporal</td>
+                                </tr>
+                                <tr>
+                                    <td><code>git stash pop</code></td>
+                                    <td>Recuperar último stash</td>
+                                </tr>
+                                <tr>
+                                    <td><code>git rebase main</code></td>
+                                    <td>Rebase sobre main</td>
+                                </tr>
+                                <tr>
+                                    <td><code>git rebase -i HEAD~N</code></td>
+                                    <td>Rebase interactivo</td>
+                                </tr>
+                                <tr>
+                                    <td><code>git cherry-pick &lt;hash&gt;</code></td>
+                                    <td>Traer un commit específico</td>
+                                </tr>
+                                <tr>
+                                    <td><code>git bisect start/good/bad</code></td>
+                                    <td>Buscar commit problemático</td>
+                                </tr>
+                                <tr>
+                                    <td><code>git reflog</code></td>
+                                    <td>Historial completo de HEAD</td>
+                                </tr>
+                                <tr>
+                                    <td><code>git config --global alias.X "Y"</code></td>
+                                    <td>Crear alias</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3>Tabla resumen de aliases del curso</h3>
+                    <div class="table-responsive">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Alias</th>
+                                    <th>Comando</th>
+                                    <th>Uso</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>git st</code></td>
+                                    <td><code>git status</code></td>
+                                    <td>Ver estado del repositorio</td>
+                                </tr>
+                                <tr>
+                                    <td><code>git co</code></td>
+                                    <td><code>git checkout</code></td>
+                                    <td>Cambiar de rama</td>
+                                </tr>
+                                <tr>
+                                    <td><code>git br</code></td>
+                                    <td><code>git branch</code></td>
+                                    <td>Gestionar ramas</td>
+                                </tr>
+                                <tr>
+                                    <td><code>git ci</code></td>
+                                    <td><code>git commit</code></td>
+                                    <td>Hacer commit</td>
+                                </tr>
+                                <tr>
+                                    <td><code>git cm "msg"</code></td>
+                                    <td><code>git commit -m "msg"</code></td>
+                                    <td>Commit con mensaje directo</td>
+                                </tr>
+                                <tr>
+                                    <td><code>git lg</code></td>
+                                    <td><code>git log --oneline --graph --all --decorate</code></td>
+                                    <td>Historial visual</td>
+                                </tr>
+                                <tr>
+                                    <td><code>git last</code></td>
+                                    <td><code>git log -1 --oneline</code></td>
+                                    <td>Último commit</td>
+                                </tr>
+                                <tr>
+                                    <td><code>git unstage</code></td>
+                                    <td><code>git restore --staged</code></td>
+                                    <td>Sacar del staging area</td>
+                                </tr>
+                                <tr>
+                                    <td><code>git ds</code></td>
+                                    <td><code>git diff --staged</code></td>
+                                    <td>Ver cambios en staging</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- LECCION 16: Despedida -->
+            <section id="seccion-16" class="content-section">
+                <div class="section-header">
+                    <img src="logo.webp" alt="Logo" class="section-logo" />
+                    <div>
+                        <span class="section-number">Lección 16</span>
+                        <h2>Despedida</h2>
+                    </div>
+                </div>
+                <div class="section-body">
+                    <div class="goodbye-content">
+                        <img src="logo.webp" alt="Git Pro Course" class="goodbye-logo" />
+                        <h3>¡Felicidades!</h3>
+                        <p>
+                            Ahora tienes las herramientas que se usan en el día a día de cualquier equipo profesional.
+                        </p>
+                        <p>
+                            La clave es practicar: usar Conventional Commits en todos tus proyectos, hacer rebase para
+                            mantener el historial limpio, limpiar tus commits antes de integrar, y seguir siempre el
+                            mismo flujo.
+                        </p>
+                        <div class="final-quote">
+                            <p>"La práctica hace al maestro. Ahora es tu turno de dominar Git."</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+        <script src="script.js"></script>
+    </body>
+</html>
